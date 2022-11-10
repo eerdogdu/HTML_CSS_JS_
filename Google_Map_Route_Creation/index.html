@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <title>Bitirme Projesi (Kurye Sistemi)</title>
+    <link rel="stylesheet" href="site.css">
+</head>
+<body>
+    <div id="search-places">
+        <input type="text" placeholder="Yer Seçiniz ..." id="search-places-input">
+        <input type="button" value="Ekle" class="bi bi-arrow-return-left" id="add-places-button" onclick="addToList()">
+        <input type="button" value="Rota Çiz" id="draw-a-route" onclick="callRoute()">
+          <b>Mode of Travel: </b>
+            <select id="mode" class="selecting-mode" onchange="calcRoute(); ">
+              <option class="bi bi-car-front" value="DRIVING">Driving</option>
+              <option value="WALKING">Walking</option>
+              <option value="BICYCLING">Bicycling</option>
+              <option value="TRANSIT">Transit</option>
+            </select>          
+    </div>
+    <div id="map"></div>
+    <div id="panel"></div>
+    <div id="place-list"></div>
+    <script src="map.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3krdfjwHtahZtV-oqRsVoF2KwHzaFOUU&libraries=places&callback=initMap"></script>
+</script>
+</body>
+</html>
